@@ -14,11 +14,14 @@ namespace domain
         [DataType(DataType.Date)]
         public DateTime CreateTime { get; set; }    
         public string FirstName { get; set; }
+        public string userName {  get; set; }
+        public string password { get; set; }
+        public string email { get; set; }   
         public string LastName { get; set; }    
         public string JobPosition { get; set; }
         public double? Salary { get; set; } = null;
         public double WorkExperience { get; set; }
         public Address PersonAddress { get; set; }
-
+        public string Role { get; set; }
     }
 }

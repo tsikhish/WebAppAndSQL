@@ -9,3 +9,4 @@ C:\Users\Mari\source\repos\sqlAndWebApi\domain\obj\Debug\net5.0\domain.dll
 C:\Users\Mari\source\repos\sqlAndWebApi\domain\obj\Debug\net5.0\refint\domain.dll
 C:\Users\Mari\source\repos\sqlAndWebApi\domain\obj\Debug\net5.0\domain.pdb
 C:\Users\Mari\source\repos\sqlAndWebApi\domain\obj\Debug\net5.0\ref\domain.dll
+C:\Users\Mari\source\repos\sqlAndWebApi\domain\obj\Debug\net5.0\domain.sourcelink.json

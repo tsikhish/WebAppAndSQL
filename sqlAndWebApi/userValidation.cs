@@ -21,4 +21,22 @@ namespace sqlAndWebApi
 
         }
     }
+    public class loginValidation : AbstractValidator<login>
+    {
+        public loginValidation()
+        {
+            RuleFor(x => x.username).NotEmpty().WithMessage("FirstName should be filled");
+            RuleFor(x => x.password).NotEmpty().WithMessage("LastName should be filled");
+
+        }
+    }
+    public class registerValidation : AbstractValidator<Registration>
+    {
+        public registerValidation()
+        {
+            RuleFor(x => x.userName).NotEmpty().WithMessage("FirstName should be filled");
+            RuleFor(x => x.password).NotEmpty().WithMessage("LastName should be filled");
+            RuleFor(x => x.email).EmailAddress().NotEmpty().WithMessage("email should be filled");
+        }
+    }
 }

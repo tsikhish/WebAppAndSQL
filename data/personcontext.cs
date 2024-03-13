@@ -17,6 +17,5 @@ namespace data
         }
         public DbSet<Person> Persons { get; set; }
         public DbSet<Address> PersonAddress { get; set; }
-       
     }
 }

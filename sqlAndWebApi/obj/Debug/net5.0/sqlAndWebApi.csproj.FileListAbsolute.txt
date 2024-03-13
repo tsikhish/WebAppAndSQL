@@ -21,7 +21,6 @@ C:\Users\Mari\source\repos\sqlAndWebApi\sqlAndWebApi\bin\Debug\net5.0\Microsoft.
 C:\Users\Mari\source\repos\sqlAndWebApi\sqlAndWebApi\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\Mari\source\repos\sqlAndWebApi\sqlAndWebApi\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\Mari\source\repos\sqlAndWebApi\sqlAndWebApi\bin\Debug\net5.0\Microsoft.OpenApi.dll
-C:\Users\Mari\source\repos\sqlAndWebApi\sqlAndWebApi\bin\Debug\net5.0\Newtonsoft.Json.dll
 C:\Users\Mari\source\repos\sqlAndWebApi\sqlAndWebApi\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Mari\source\repos\sqlAndWebApi\sqlAndWebApi\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Mari\source\repos\sqlAndWebApi\sqlAndWebApi\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -77,3 +76,6 @@ C:\Users\Mari\source\repos\sqlAndWebApi\sqlAndWebApi\obj\Debug\net5.0\refint\sql
 C:\Users\Mari\source\repos\sqlAndWebApi\sqlAndWebApi\obj\Debug\net5.0\sqlAndWebApi.pdb
 C:\Users\Mari\source\repos\sqlAndWebApi\sqlAndWebApi\obj\Debug\net5.0\sqlAndWebApi.genruntimeconfig.cache
 C:\Users\Mari\source\repos\sqlAndWebApi\sqlAndWebApi\obj\Debug\net5.0\ref\sqlAndWebApi.dll
+C:\Users\Mari\source\repos\sqlAndWebApi\sqlAndWebApi\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Mari\source\repos\sqlAndWebApi\sqlAndWebApi\obj\Debug\net5.0\sqlAndWebApi.sourcelink.json
+C:\Users\Mari\source\repos\sqlAndWebApi\sqlAndWebApi\bin\Debug\net5.0\BCrypt.Net-Next.dll

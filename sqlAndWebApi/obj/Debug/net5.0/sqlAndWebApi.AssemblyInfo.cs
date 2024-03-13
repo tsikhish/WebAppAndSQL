@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("sqlAndWebApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a6b7e0f65ef909c4551797502a21a956ea842793")]
 [assembly: System.Reflection.AssemblyProductAttribute("sqlAndWebApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("sqlAndWebApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
