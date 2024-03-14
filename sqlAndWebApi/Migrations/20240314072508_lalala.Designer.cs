@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using data;
+using dataOfSql;
 
-namespace data.Migrations
+namespace sqlAndWebApi.Migrations
 {
     [DbContext(typeof(personcontext))]
-    partial class personcontextModelSnapshot : ModelSnapshot
+    [Migration("20240314072508_lalala")]
+    partial class lalala
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -65,11 +67,23 @@ namespace data.Migrations
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Role")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<double?>("Salary")
                         .HasColumnType("float");
 
                     b.Property<double>("WorkExperience")
                         .HasColumnType("float");
+
+                    b.Property<string>("email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("password")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("userName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("PersonId");
 

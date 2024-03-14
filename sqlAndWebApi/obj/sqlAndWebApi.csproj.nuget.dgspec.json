@@ -4,14 +4,14 @@
     "C:\\Users\\Mari\\source\\repos\\sqlAndWebApi\\sqlAndWebApi\\sqlAndWebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Mari\\source\\repos\\sqlAndWebApi\\data\\data.csproj": {
+    "C:\\Users\\Mari\\source\\repos\\sqlAndWebApi\\dataOfSql\\dataOfSql.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mari\\source\\repos\\sqlAndWebApi\\data\\data.csproj",
-        "projectName": "data",
-        "projectPath": "C:\\Users\\Mari\\source\\repos\\sqlAndWebApi\\data\\data.csproj",
+        "projectUniqueName": "C:\\Users\\Mari\\source\\repos\\sqlAndWebApi\\dataOfSql\\dataOfSql.csproj",
+        "projectName": "dataOfSql",
+        "projectPath": "C:\\Users\\Mari\\source\\repos\\sqlAndWebApi\\dataOfSql\\dataOfSql.csproj",
         "packagesPath": "C:\\Users\\Mari\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mari\\source\\repos\\sqlAndWebApi\\data\\obj\\",
+        "outputPath": "C:\\Users\\Mari\\source\\repos\\sqlAndWebApi\\dataOfSql\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Mari\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -49,8 +49,14 @@
               "version": "[5.0.0, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[5.0.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.6.3, )"
             }
           },
           "imports": [
@@ -152,8 +158,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Mari\\source\\repos\\sqlAndWebApi\\data\\data.csproj": {
-                "projectPath": "C:\\Users\\Mari\\source\\repos\\sqlAndWebApi\\data\\data.csproj"
+              "C:\\Users\\Mari\\source\\repos\\sqlAndWebApi\\dataOfSql\\dataOfSql.csproj": {
+                "projectPath": "C:\\Users\\Mari\\source\\repos\\sqlAndWebApi\\dataOfSql\\dataOfSql.csproj"
               }
             }
           }
@@ -181,6 +187,14 @@
               "version": "[5.0.0, )"
             },
             "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",
               "version": "[5.0.0, )"
             },

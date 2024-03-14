@@ -5,13 +5,13 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using data;
+using dataOfSql;
 
 namespace sqlAndWebApi.Migrations
 {
     [DbContext(typeof(personcontext))]
-    [Migration("20240229222711_blabla")]
-    partial class blabla
+    [Migration("20240314090022_admin")]
+    partial class admin
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -67,11 +67,23 @@ namespace sqlAndWebApi.Migrations
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Role")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<double?>("Salary")
                         .HasColumnType("float");
 
-                    b.Property<double>("WorkExperience")
+                    b.Property<double?>("WorkExperience")
                         .HasColumnType("float");
+
+                    b.Property<string>("email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("password")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("userName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("PersonId");
 

@@ -239,7 +239,7 @@
           }
         },
         "build": {
-          "build/netcoreapp3.0/_._": {}
+          "build/netcoreapp3.0/Microsoft.EntityFrameworkCore.Design.props": {}
         }
       },
       "Microsoft.EntityFrameworkCore.Relational/5.0.0": {
@@ -1798,19 +1798,19 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "data/1.0.0": {
+      "dataOfSql/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0",
-          "Microsoft.EntityFrameworkCore.Tools": "5.0.0",
+          "Swashbuckle.AspNetCore": "5.6.3",
           "domain": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/data.dll": {}
+          "bin/placeholder/dataOfSql.dll": {}
         },
         "runtime": {
-          "bin/placeholder/data.dll": {}
+          "bin/placeholder/dataOfSql.dll": {}
         }
       },
       "domain/1.0.0": {
@@ -5948,10 +5948,10 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
-    "data/1.0.0": {
+    "dataOfSql/1.0.0": {
       "type": "project",
-      "path": "../data/data.csproj",
-      "msbuildProject": "../data/data.csproj"
+      "path": "../dataOfSql/dataOfSql.csproj",
+      "msbuildProject": "../dataOfSql/dataOfSql.csproj"
     },
     "domain/1.0.0": {
       "type": "project",
@@ -5965,8 +5965,10 @@
       "FluentValidation >= 5.0.0.1",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 5.0.0",
       "Microsoft.EntityFrameworkCore >= 5.0.0",
+      "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.0",
+      "Microsoft.EntityFrameworkCore.Tools >= 5.0.0",
       "Swashbuckle.AspNetCore >= 5.6.3",
-      "data >= 1.0.0"
+      "dataOfSql >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -5996,8 +5998,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\Mari\\source\\repos\\sqlAndWebApi\\data\\data.csproj": {
-              "projectPath": "C:\\Users\\Mari\\source\\repos\\sqlAndWebApi\\data\\data.csproj"
+            "C:\\Users\\Mari\\source\\repos\\sqlAndWebApi\\dataOfSql\\dataOfSql.csproj": {
+              "projectPath": "C:\\Users\\Mari\\source\\repos\\sqlAndWebApi\\dataOfSql\\dataOfSql.csproj"
             }
           }
         }
@@ -6025,6 +6027,14 @@
             "version": "[5.0.0, )"
           },
           "Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[5.0.0, )"
+          },
+          "Microsoft.EntityFrameworkCore.SqlServer": {
+            "target": "Package",
+            "version": "[5.0.0, )"
+          },
+          "Microsoft.EntityFrameworkCore.Tools": {
             "target": "Package",
             "version": "[5.0.0, )"
           },

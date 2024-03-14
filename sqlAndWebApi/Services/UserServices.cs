@@ -1,6 +1,7 @@
-﻿using data;
+﻿using dataOfSql;
 using domain;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using sqlAndWebApi.Controllers;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ namespace sqlandwebapi.services
 {
     public interface IUserservices
     {
-        Person Login(login personmodel);
+        //Person Login(login personmodel);
         IEnumerable<Person> getAll();
 
     }
@@ -23,17 +24,16 @@ namespace sqlandwebapi.services
             _context = context;
         }
 
-        public Person Login(login loginPerson)
-        {
+        //public async Task<IActionResult>  Login([FromBody] login loginPerson)
+        //{
             
-            var user = _context.Persons.SingleOrDefault(x => x.userName == loginPerson.username);
-            if (user == null)
-                return null;
-            if (user.password != loginPerson.password)
-                return null;
+        //    var user =await _context.Persons.FirstOrDefaultAsync(x => x.userName == loginPerson.username);
+        //    if (user == null)
+        //        return Unauthorized;
+            
 
-            return user;
-        }
+        //    return user;
+        //}
         public IEnumerable<Person> getAll() => _context.Persons;
 
 

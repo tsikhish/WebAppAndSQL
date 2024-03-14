@@ -1,9 +1,10 @@
-﻿using data;
+﻿using dataOfSql;
 using domain;
 using FluentValidation;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using sqlandwebapi.services;
 using sqlAndWebApi.helper;
@@ -25,11 +26,11 @@ namespace sqlAndWebApi.Controllers
         private readonly personcontext _context;
         private readonly Appsettings _appsettings;
         private readonly IUserservices _userservices;
-        public persons( personcontext context,Appsettings appsettings, IUserservices userservices)
+        public persons(personcontext context, IOptions<Appsettings> appSettings, IUserservices userservices)
         {
             _context = context;
             _userservices = userservices;
-            _appsettings = appsettings;
+            _appsettings = appSettings.Value;
         }
 
         [HttpPost("Register")]
@@ -48,7 +49,7 @@ namespace sqlAndWebApi.Controllers
                 
             }
             if (await _context.Persons.AnyAsync(x => x.email == user.email))
-                    return Conflict("email is already registered");
+                return Conflict("email is already registered");
             try
             {
                 var passwordHash = BCrypt.Net.BCrypt.HashPassword(user.password);
@@ -69,8 +70,8 @@ namespace sqlAndWebApi.Controllers
 
             }
         }
-        [HttpPost]
-        [Route("login")]
+        [AllowAnonymous]
+        [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] login loginperson)
         {
             var validator = new loginValidation();
@@ -85,9 +86,21 @@ namespace sqlAndWebApi.Controllers
                 return BadRequest(errorMessage);
 
             }
-            var user = _userservices.Login(loginperson);
-            
-            var tokenString = GenerateToken(user);
+            var user = await _context.Persons.FirstOrDefaultAsync(x => x.userName == loginperson.username);
+
+            if (user == null)
+            {
+                return Unauthorized("this person is not authorized");
+
+            }
+            if (!BCrypt.Net.BCrypt.Verify(loginperson.password, user.password)) ;
+            var authClaims = new List<Claim>
+            {
+                new Claim(ClaimTypes.Name,user.userName),
+                new Claim(ClaimTypes.NameIdentifier,user.PersonId.ToString()),
+                new Claim(ClaimTypes.Role,user.Role)
+            };
+            var tokenString = GenerateToken(authClaims);
             return Ok(
                 new
                 {
@@ -186,23 +199,19 @@ namespace sqlAndWebApi.Controllers
             return Ok(existingPerson);
         }
         
-        private string GenerateToken(Person persons)
+        private string GenerateToken(List<Claim> claims)
         {
-            var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_appsettings.Secret);
-            var tokenDescriptor = new SecurityTokenDescriptor
-            {
-                Subject = new ClaimsIdentity(new Claim[]
-                {
-                    new Claim(ClaimTypes.Name, persons.PersonId.ToString()),
-                    new Claim(ClaimTypes.Name, persons.FirstName.ToString())
-                }),
-                Expires = DateTime.UtcNow.AddDays(1),
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
-            };
-            var token = tokenHandler.CreateToken(tokenDescriptor);
-            var tokenString = tokenHandler.WriteToken(token);
-            return tokenString;
+            var authSecret = new SymmetricSecurityKey(key);
+            var tokenObject = new JwtSecurityToken(
+                expires:DateTime.Now.AddDays(1),
+                claims:claims,
+                signingCredentials:new SigningCredentials(authSecret,SecurityAlgorithms.HmacSha256)
+                );
+            var tokenHandler = new JwtSecurityTokenHandler();
+
+            var token = tokenHandler.WriteToken(tokenObject);
+            return token;
         }
 
     }

@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using data;
+using dataOfSql;
 
 namespace sqlAndWebApi.Migrations
 {
@@ -65,11 +65,23 @@ namespace sqlAndWebApi.Migrations
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Role")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<double?>("Salary")
                         .HasColumnType("float");
 
-                    b.Property<double>("WorkExperience")
+                    b.Property<double?>("WorkExperience")
                         .HasColumnType("float");
+
+                    b.Property<string>("email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("password")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("userName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("PersonId");
 

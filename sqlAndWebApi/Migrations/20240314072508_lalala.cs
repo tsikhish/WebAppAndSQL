@@ -2,7 +2,7 @@
 
 namespace sqlAndWebApi.Migrations
 {
-    public partial class sdaa : Migration
+    public partial class lalala : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

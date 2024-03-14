@@ -12,12 +12,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using data;
 using sqlAndWebApi.helper;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using sqlandwebapi.services;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using dataOfSql;
 
 namespace sqlAndWebApi
 {
@@ -36,7 +37,7 @@ namespace sqlAndWebApi
         {
              services.AddDbContext<personcontext>(opt =>
              opt.UseSqlServer(Configuration.GetConnectionString("sqlAndWebApi"),
-             b => b.MigrationsAssembly("data"))
+             b => b.MigrationsAssembly("sqlAndWebApi"))
              .EnableSensitiveDataLogging()
              .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
 
@@ -68,6 +69,7 @@ namespace sqlAndWebApi
                        ValidateAudience = false
                    };
                });
+
             services.AddScoped<IUserservices, userservices>();
 
         }
