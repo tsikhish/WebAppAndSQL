@@ -9,7 +9,7 @@ using dataOfSql;
 
 namespace sqlAndWebApi.Migrations
 {
-    [DbContext(typeof(personcontext))]
+    [DbContext(typeof(PersonContext))]
     [Migration("20240313154908_blabla")]
     partial class blabla
     {

@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace dataOfSql
 {
-    public class personcontext : DbContext
+    public class PersonContext : DbContext
     {
-        public personcontext(DbContextOptions<personcontext> options)
+        public PersonContext(DbContextOptions<PersonContext> options)
               : base(options)
         {
 

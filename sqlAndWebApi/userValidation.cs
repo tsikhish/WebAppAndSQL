@@ -25,9 +25,15 @@ namespace sqlAndWebApi
     {
         public loginValidation()
         {
-            RuleFor(x => x.username).NotEmpty().WithMessage("FirstName should be filled");
-            RuleFor(x => x.password).NotEmpty().WithMessage("LastName should be filled");
+          
+            RuleFor(x => x.username)
+                .NotEmpty().WithMessage("Username should not be empty")
+                .NotNull().WithMessage("Username should not be null");
 
+            RuleFor(x => x.password)
+                .NotEmpty().WithMessage("Password should not be empty")
+                .NotNull().WithMessage("Password should not be null");
+            
         }
     }
     public class registerValidation : AbstractValidator<Registration>

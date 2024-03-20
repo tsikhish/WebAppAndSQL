@@ -19,6 +19,7 @@ using Microsoft.IdentityModel.Tokens;
 using sqlandwebapi.services;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using dataOfSql;
+using sqlAndWebApi.Services;
 
 namespace sqlAndWebApi
 {
@@ -35,7 +36,7 @@ namespace sqlAndWebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-             services.AddDbContext<personcontext>(opt =>
+             services.AddDbContext<PersonContext>(opt =>
              opt.UseSqlServer(Configuration.GetConnectionString("sqlAndWebApi"),
              b => b.MigrationsAssembly("sqlAndWebApi"))
              .EnableSensitiveDataLogging()
@@ -69,9 +70,8 @@ namespace sqlAndWebApi
                        ValidateAudience = false
                    };
                });
-
-            services.AddScoped<IUserservices, userservices>();
-
+            services.AddScoped<ITestService, TestService>();
+            //services.AddScoped<IUserservices, UserServices>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

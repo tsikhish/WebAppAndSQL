@@ -8,8 +8,8 @@ using dataOfSql;
 
 namespace sqlAndWebApi.Migrations
 {
-    [DbContext(typeof(personcontext))]
-    partial class personcontextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(PersonContext))]
+    partial class PersonContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
